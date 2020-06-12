@@ -1,0 +1,12 @@
+<div class="row">
+    <div *ngIf="loading" class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+   
+    <div class="col-6" *ngIf="!loading">
+        <h2>{{lugar.name}}</h2>
+        <h3> Tipo: {{lugar.type }}</h3>
+        <h3> Dimension: {{lugar.dimension }}</h3>
+    </div>
+</div>

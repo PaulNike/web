@@ -1,0 +1,53 @@
+<h3>Nro total de personajes: {{countCharacter}}</h3>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="prevPage()" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li *ngFor="let page of arregloPaginas" class="page-item" [ngClass]="{'active': pagina == page}">
+          <a class="page-link" (click)="goPage(page)">{{page}}</a>
+        </li>
+      <li class="page-item">
+        <a class="page-link" (click)="nextPage()" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+<div *ngIf="loading" class="d-flex align-items-center">
+    <strong>Loading...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  </div>
+<div *ngIf="!loading">
+    <div  class="card-columns">
+        <div *ngFor="let personaje of personajes" class="card"
+        [routerLink]="['/personajes', 'detalle', personaje.id ]" 
+        >
+            <img [src]="personaje.image" class="card-img-top" [alt]="personaje.name">
+            <div class="card-body">
+              <h2 class="card-title">{{ personaje.name }}</h2>
+              <p class="card-text">especie: {{personaje.species}}</p>
+              <p class="card-text"><small class="text-muted">{{ personaje.status}}</small></p>
+            </div>
+          </div>
+    </div>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="prevPage()" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li *ngFor="let page of arregloPaginas" class="page-item" [ngClass]="{'active': pagina == page}">
+          <a class="page-link" (click)="goPage(page)">{{page}}</a>
+        </li>
+      <li class="page-item">
+        <a class="page-link" (click)="nextPage()" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>

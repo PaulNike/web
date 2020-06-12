@@ -1,0 +1,9 @@
+<div class="card-columns">
+    <div *ngFor="let lugar of lugares" class="card">
+        <div class="card-body">
+          <h2 class="card-title">{{ lugar.name }}</h2>
+          <p class="card-text">Tipo: {{lugar.type}}</p>
+          <p class="card-text"><small class="text-muted">dimensión{{ lugar.dimension}}</small></p>
+        </div>
+      </div>
+</div>

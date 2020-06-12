@@ -1,0 +1,15 @@
+<div class="row">
+    <div *ngIf="loading" class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+    <div class="col-6" *ngIf="!loading">
+      <img [src]="peronsaje.image" alt="">
+    </div>
+    <div class="col-6">
+        <h2>{{peronsaje.name}}</h2>
+        <h3> Estado: {{peronsaje.status }}</h3>
+        <h3> Genero: {{peronsaje.gender }}</h3>
+        <h3 (click)="verDetalleLugar()"> Lugar: <button type="button" class="btn btn-link">{{peronsaje.location.name}}</button> </h3>
+    </div>
+</div>
